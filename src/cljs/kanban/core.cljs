@@ -6,12 +6,16 @@
 (defonce app-state (atom {:text "Hello Kanban!"}))
 
 (defn Card []
-  [:div.card])
+  [:div.card
+   "a card"])
 
 (defn Column []
-  [:div.column])
+  [:div.column
+   [:h2 "a column"]])
 
 (defn Board []
-  [:div.board])
+  [:div.board
+   [Column]
+   [Column]])
 
 (reagent/render [Board] (js/document.getElementById "app"))
