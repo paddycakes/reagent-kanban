@@ -3,9 +3,15 @@
 
 (enable-console-print!)
 
-(defonce app-state (atom {:text "Hello Chestnut!"}))
+(defonce app-state (atom {:text "Hello Kanban!"}))
 
-(defn greeting []
-  [:h1 (:text @app-state)])
+(defn Card []
+  [:div.card])
 
-(reagent/render [greeting] (js/document.getElementById "app"))
+(defn Column []
+  [:div.column])
+
+(defn Board []
+  [:div.board])
+
+(reagent/render [Board] (js/document.getElementById "app"))
